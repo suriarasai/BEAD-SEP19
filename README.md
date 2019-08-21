@@ -1,1 +1,4 @@
 # BEAD-SEP19
+This course is part of the Software Systems series, Data Science series, Graduate Certificate in Big Data Engineering & Web Analytics as well as Graduate Certificate in Engineering Big Data series offered by NUS-ISS.
+
+Participants will learn various aspects of data engineering while building resilient distributed datasets. Participants will learn to apply key practices, identify multiple data sources appraised against their business value, design the right storage, and implement proper access model(s).  Finally, participants will build a scalable data pipeline solution composed of pluggable component architecture, based on the combination of requirements in a vendor/technology agnostic manner.  Participants will familiarize themselves on working with Spark platform along with additional focus on query and streaming libraries.
