@@ -1,0 +1,23 @@
+SQOOP COMMANDS
+==============
+
+$ sqoop help
+
+$ sqoop list-tables --connect jdbc:mysql://localhost/employees --username root --password cloudera
+
+$ sqoop import --help
+
+$ sqoop import \
+--connect jdbc:mysql://localhost/employees \
+--username root --password cloudera \
+--table departments \
+--target-dir /employees/departments \
+--null-non-string '\\N'
+
+
+
+
+
+
+
+
