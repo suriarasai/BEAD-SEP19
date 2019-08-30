@@ -1,0 +1,4 @@
+hdfs dfs -ls /
+hdfs dfs -ls /user
+hdfs dfs -ls /user/cloudera
+sudo -u hdfs hadoop fs -mkdir /data 
