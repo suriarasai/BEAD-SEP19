@@ -21,20 +21,18 @@ import org.apache.log4j.Logger
 object SparkLoadAndSave {
     Logger.getLogger("org").setLevel(Level.OFF)
    
-  case class Person(name: String, age: Int)
+  case class Person(name: String)
 
   case class Stocks(name: String, totalPrice: Long)
 
   def main(args: Array[String]): Unit = {
 
-    val conf = new SparkConf().setAppName("CLoadingSavingData").setMaster("local[2]")
+    val conf = new SparkConf().setAppName("LoadingSavingData").setMaster("local[2]")
     val sc = new SparkContext(conf)
 
     val mapper = new ObjectMapper()
-   
-    
     // Loading JSON File
-    val jsonInput = sc.textFile("/home/cloudera/git/BEAD/W02-SparkCore-RDD/data/people.json")
+    val jsonInput = sc.textFile("/home/cloudera/git/BEAD-SEP19/W05-SparkCore/data/people.json")
     val result1 = jsonInput.flatMap(record => {
       try {
         Some(mapper.readValue(record, classOf[Person]))
@@ -42,12 +40,12 @@ object SparkLoadAndSave {
         case e: Exception => None
       }
     })
-    result1.filter(person => person.age > 15).map(mapper.writeValueAsString(_)).
-      saveAsTextFile("/home/cloudera/git/BEAD/W02-SparkCore-RDD/data/outputFile")
+    result1.filter(person => person.name =="America Ankunding").map(mapper.writeValueAsString(_)).
+      saveAsTextFile("/home/cloudera/git/BEAD-SEP19/W05-SparkCore/data/output")
 
     // Loading CSV
 
-    val input1 = sc.textFile("/home/cloudera/git/BEAD/W02-SparkCore-RDD/data/stocks.csv")
+    val input1 = sc.textFile("/home/cloudera/git/BEAD-SEP19/W05-SparkCore/data/stocks.csv")
     val result2 = input1.flatMap { line =>
       val reader = new CSVReader(new StringReader(line))
       reader.readAll().asScala.toList.map(x => Stocks(x(0), x(5).toLong))

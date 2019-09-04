@@ -5,7 +5,7 @@ import org.apache.spark.SparkContext
 
 object SparkContextExample {
   def main(args: Array[String]) {
-    val stocksPath = "hdfs://quickstart.cloudera/user/cloudera/stocks.txt"
+    val stocksPath = "hdfs://quickstart.cloudera/user/cloudera/stock.txt"
     val conf = new SparkConf().setAppName("Counting Lines").setMaster("local[2]")
     val sc = new SparkContext(conf)
     val data = sc.textFile(stocksPath, 2)
