@@ -5,10 +5,13 @@ import org.apache.spark.mllib.linalg.Vectors
 import org.apache.spark.mllib.stat.Statistics
 import org.apache.spark.sql._
 import org.apache.spark.sql.functions._
+import org.apache.log4j.Level
+import org.apache.log4j.Logger
 
 object SparkSummaryStats {
   
    def main(args:Array[String]): Unit = {
+     Logger.getLogger("org").setLevel(Level.OFF)
     val conf = new SparkConf()
       .setMaster("local[2]")
       .setAppName("SparkVariableIdentification")

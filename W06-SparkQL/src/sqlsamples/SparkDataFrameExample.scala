@@ -1,9 +1,12 @@
 package sqlsamples
 
 import org.apache.spark.sql.SparkSession
+import org.apache.log4j.Level
+import org.apache.log4j.Logger
 
 object SparkDataFrameExample extends App {
   
+  Logger.getLogger("org").setLevel(Level.OFF)
   	// Create the Spark Session and the spark context				
 	val spark = SparkSession
 			.builder

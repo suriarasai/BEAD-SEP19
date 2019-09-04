@@ -3,9 +3,12 @@ package sqlsamples
 import org.apache.spark._
 import org.apache.spark.sql.SQLContext
 import org.apache.spark.sql.types.{StructType, StringType,DoubleType, StructField}
+import org.apache.log4j.Level
+import org.apache.log4j.Logger
 
 object SparkSampling {
   def main(args:Array[String]): Unit = {
+    Logger.getLogger("org").setLevel(Level.OFF)
     val conf = new SparkConf()
       .setMaster("local[2]")
       .setAppName("SparkSampling")

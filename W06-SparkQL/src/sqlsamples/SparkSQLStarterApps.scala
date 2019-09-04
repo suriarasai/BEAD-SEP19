@@ -2,9 +2,12 @@ package sqlsamples
 
 import org.apache.spark.sql.{Row, SparkSession}
 import org.apache.spark.sql.functions._
+import org.apache.log4j.Level
+import org.apache.log4j.Logger
 
 object SparkSQLStarterApps 
 {
+  
 	// Create the Spark Session and the spark context				
 	val spark = SparkSession
 			.builder
@@ -183,6 +186,7 @@ object SparkSQLStarterApps
 	}
     def main(args: Array[String]) 
     { 
+      Logger.getLogger("org").setLevel(Level.OFF)
   	  gettingStarted()
   	  gettingStartedAPI()
   	  aggregations()
