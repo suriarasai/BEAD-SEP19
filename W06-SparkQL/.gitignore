@@ -1,3 +1,6 @@
 /target/
 /build.sbt~
 /bin/
+/scala.master.parquet/
+/scala.trans.parquet/
+/scalaMaster.json/

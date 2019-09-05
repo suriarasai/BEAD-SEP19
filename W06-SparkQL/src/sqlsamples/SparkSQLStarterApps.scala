@@ -186,6 +186,7 @@ object SparkSQLStarterApps
 	}
     def main(args: Array[String]) 
     { 
+      
       Logger.getLogger("org").setLevel(Level.OFF)
   	  gettingStarted()
   	  gettingStartedAPI()
