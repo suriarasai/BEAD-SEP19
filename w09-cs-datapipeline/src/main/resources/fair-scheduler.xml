@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<allocations>
+    <pool name="fair_pool">
+        <schedulingMode>FAIR</schedulingMode>
+        <weight>2</weight>
+        <minShare>4</minShare>
+    </pool>
+</allocations>
