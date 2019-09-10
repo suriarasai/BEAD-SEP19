@@ -1,4 +1,4 @@
-name := "W05-SparkCore"
+name := "w05-sparkcore"
 
 version := "1.0"
 

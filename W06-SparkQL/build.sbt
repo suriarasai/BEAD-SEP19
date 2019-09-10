@@ -1,4 +1,4 @@
-name := "W06-SparkQL"
+name := "w06-sparkql"
 
 version := "1.0"
 

@@ -1,4 +1,4 @@
-name := "W07-SparkML"
+name := "w07-sparkml"
 
 version := "1.0"
 
